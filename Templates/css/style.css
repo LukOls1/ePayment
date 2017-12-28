@@ -5,3 +5,17 @@ body {
 .topnavbarspace{
   margin-bottom: 5vh;
 }
+
+.posts-list{
+  height:80vh;
+
+}
+
+.post-container{
+  overflow-y: scroll;
+}
+
+.post {
+  margin: 2vh;
+  display: block;
+}
