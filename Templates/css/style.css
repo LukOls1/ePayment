@@ -19,3 +19,6 @@ body {
   margin: 2vh;
   display: block;
 }
+.paddingfix{
+  padding: 15px;
+}
