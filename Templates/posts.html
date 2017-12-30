@@ -42,7 +42,6 @@
         </div>
       </nav>
     </header>
-
     <section id="breadcrumb">
       <div class="container">
         <div class="row ">
@@ -63,48 +62,153 @@
             </div>
           </div>
           <div class="col-md-9">
-            <div class="card posts-list">
-              <h3 class="card-header">
-                Posts
-              </h3>
-
-              <div class="post-container card">
-                <div class="card post">
-                  <h3 class="card-header">Post Title</h3>
-                  <div class="card-block">
-                    <h4 class="card-title">Kubik w tym mc-u z-bał nas behemotnicznie.</h4>
-                    <p class="card-text">Generalnie zrobiłbym mniejsze te posty. Wpłacił za dużo kasy i nie zmieściło się na Bema 2, generalnie op papiuż.</p>
-                    <a href="#" class="btn btn-primary">Nazwij</a>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12 col-sm-offset-1" id="logout">
+                  <div class="page-header">
+                      <h3 class="reviews">Posts</h3>
+                  </div>
+                <div class="comment-tabs ">            
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="comments-logout">                
+                        <ul class="media-list">
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                              <img class="media-object rounded-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
+                            </a>
+                            <div class="media-body">
+                              <div class="card card-lg">
+                                <div class="col-sm-offset-1 col-sm-12">
+                                  <h4 class="media-heading text-uppercase reviews float-left">Marco </h4>
+                                  <ul class="media-date text-uppercase list-inline small">
+                                    <li class="dd list-inline-item">22</li>
+                                    <li class="mm list-inline-item">09</li>
+                                    <li class="aaaa list-inline-item">2014</li>
+                                  </ul>
+                                </div>
+                                  <p class="media-body mx-auto">
+                                    Great snippet! Thanks for sharing.
+                                  </p>
+                                  <div class="col-sm-4 d-inline-block">
+                                    <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                    <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyOne"><span class="glyphicon glyphicon-comment"></span> 2 comments</a>
+                                  </div>              
+                            </div>
+                            <div class="collapse" id="replyOne">
+                              <ul class="media-list">
+                                  <li class="media media-replied">
+                                      <a class="pull-left" href="#">
+                                        <img class="media-object rounded-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/128.jpg" alt="profile">
+                                      </a>
+                                      <div class="media-body">
+                                        <div class="well well-lg">
+                                            <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> The Hipster</h4>
+                                            <ul class="media-date text-uppercase reviews list-inline">
+                                              <li class="dd">22</li>
+                                              <li class="mm">09</li>
+                                              <li class="aaaa">2014</li>
+                                            </ul>
+                                            <p class="media-comment">
+                                              Nice job Maria.
+                                            </p>
+                                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                        </div>              
+                                      </div>
+                                  </li>
+                                  <li class="media media-replied" id="replied">
+                                    <a class="pull-left" href="#">
+                                      <img class="media-object rounded-circle" src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg" alt="profile">
+                                    </a>
+                                    <div class="media-body">
+                                      <div class="well well-lg">
+                                          <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Mary</h4></h4>
+                                          <ul class="media-date text-uppercase reviews list-inline">
+                                            <li class="dd">22</li>
+                                            <li class="mm">09</li>
+                                            <li class="aaaa">2014</li>
+                                          </ul>
+                                          <p class="media-comment">
+                                            Thank you Guys!
+                                          </p>
+                                          <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                      </div>              
+                                    </div>
+                                  </li>
+                              </ul>  
+                            </div>
+                          </li>          
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                              <img class="media-object rounded-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kurafire/128.jpg" alt="profile">
+                            </a>
+                            <div class="media-body">
+                              <div class="well well-lg">
+                                  <h4 class="media-heading text-uppercase reviews">Nico</h4>
+                                  <ul class="media-date text-uppercase reviews list-inline">
+                                    <li class="dd">22</li>
+                                    <li class="mm">09</li>
+                                    <li class="aaaa">2014</li>
+                                  </ul>
+                                  <p class="media-comment">
+                                    I'm looking for that. Thanks!
+                                  </p>
+                                  <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                              </div>              
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                              <img class="media-object rounded-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
+                            </a>
+                            <div class="media-body">
+                              <div class="well well-lg">
+                                  <h4 class="media-heading text-uppercase reviews">Kriztine</h4>
+                                  <ul class="media-date text-uppercase reviews list-inline">
+                                    <li class="dd">22</li>
+                                    <li class="mm">09</li>
+                                    <li class="aaaa">2014</li>
+                                  </ul>
+                                  <p class="media-comment">
+                                    Yehhhh... Thanks for sharing.
+                                  </p>
+                                  <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                  <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyTwo"><span class="glyphicon glyphicon-comment"></span> 1 comment</a>
+                              </div>              
+                            </div>
+                            <div class="collapse" id="replyTwo">
+                              <ul class="media-list">
+                                <li class="media media-replied">
+                                  <a class="pull-left" href="#">
+                                    <img class="media-object rounded-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg" alt="profile">
+                                  </a>
+                                  <div class="media-body">
+                                    <div class="well well-lg">
+                                        <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Lizz</h4>
+                                        <ul class="media-date text-uppercase reviews list-inline">
+                                          <li class="dd">22</li>
+                                          <li class="mm">09</li>
+                                          <li class="aaaa">2014</li>
+                                        </ul>
+                                        <p class="media-comment">
+                                          Classy!
+                                        </p>
+                                        <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                    </div>              
+                                  </div>
+                                </li>
+                              </ul>  
+                            </div>
+                          </li>
+                        </ul> 
+                    </div>
                   </div>
                 </div>
-                <div class="card post">
-                  <h3 class="card-header">The Onest</h3>
-                  <div class="card-block">
-                    <h4 class="card-title">The Onest follow Johanes Pavulos 2.</h4>
-                    <p class="card-text">Jak będziemy chcieli dodać jakieś funkcyjki to można se ładować.</p>
-                    <a href="#" class="btn btn-primary">Nazwij</a>
-                  </div>
-                </div>
-                <div class="card post">
-                  <h3 class="card-header">The Onest</h3>
-                  <div class="card-block">
-                    <h4 class="card-title">The Onest follow Johanes Pavulos 2.</h4>
-                    <p class="card-text">Jak będziemy chcieli dodać jakieś funkcyjki to można se ładować.</p>
-                    <a href="#" class="btn btn-primary">Nazwij</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="input-group input-group-lg">
-                <span class="input-group-addon" id="sizing-addon1">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
