@@ -7,15 +7,15 @@ body {
     height: 100%;
 }
 
-.topnavbarspace{
+.topnavbarspace {
   margin-bottom: 5vh;
 }
 
-.posts-list{
+.posts-list {
   height:80vh;
 }
 
-.post-container{
+.post-container {
   overflow-y: scroll;
 }
 
@@ -23,8 +23,15 @@ body {
   margin: 2vh;
 }
 
-.avatarImg{
+.avatarImg {
   width: 50%;
+}
+.avatar {
+    padding: 15px 0;
+}
+.buttonBar {
+    margin-top: 3vh; 
+    padding-bottom: 5px;
 }
 
 /*
