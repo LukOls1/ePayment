@@ -2,13 +2,17 @@ body {
     background: #f4f4f4;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 .topnavbarspace{
   margin-bottom: 5vh;
 }
 
 .posts-list{
   height:80vh;
-
 }
 
 .post-container{
@@ -17,8 +21,27 @@ body {
 
 .post {
   margin: 2vh;
-  display: block;
 }
-.paddingfix{
-  padding: 15px;
+
+.avatarImg{
+  width: 50%;
 }
+
+/*
+.devBorder {
+    border: 2px solid red;
+}
+
+.devListBorder {
+    border: 2px solid green;
+}
+
+.devPostBorder {
+    border: 5px solid blue;
+}
+
+.postBorder {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+*/
