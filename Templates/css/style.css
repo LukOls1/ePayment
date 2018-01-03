@@ -33,6 +33,11 @@ body {
     margin-top: 4vh; 
     padding-bottom: 5px;
 }
+.PostInputContainer {
+    background: #f4f4f4;
+    padding-left: 0;
+    border: none;
+}
 
 /*
 .devBorder {
