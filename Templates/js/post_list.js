@@ -55,6 +55,7 @@ addPostContent = function (id) {
     $(post).attr('id',   id);
     $(post).addClass('devPostBorder container-fluid col-10');
     $(post).append(addPostHeader());
+    $(post).append(addPostRow());
 
     return post;
 }
@@ -64,22 +65,47 @@ addPostHeader = function (id) {
     $(post).attr('id',   id);
     $(post).addClass('devPostBorder row');
     $(post).append(addPostTittle());
+    $(post).append(addPostDate());
 
     return post;
 }
 
 addPostTittle = function (id) {
     const post = document.createElement("div");
-    const inputText = document.getElementById('addTitle').value;
+    const inputTitle = document.getElementById('addTitle').value;
     $(post).attr('id',   id);
     $(post).addClass('devPostBorder col-3 h3');
-    $(post).append(inputText);
+    $(post).append(inputTitle);    
 
+    return post;
+}
 
+addPostDate  = function (id) {
+    const post = document.createElement("div");
+    $(post).attr('id',   id);
+    $(post).addClass('devPostBorder offset-5 col-4'); 
+    $(post).append('HH:mm dd.mm.yyyy')
 
+    return post;
+}
 
+addPostRow = function (id) {
     
+    const post = document.createElement("div");
+    $(post).attr('id',   id);
+    $(post).addClass('devPostBorder row'); 
+    $(post).append(addPostText()); 
+    
+    return post;
+}
 
+addPostText = function (id) {
+    const post = document.createElement("div");
+    const postText = document.getElementById('addText').value;
+    $(post).attr('id',   id);
+    $(post).addClass('devPostBorder col-12'); 
+    $(post).append(postText); 
+    
     return post;
 }
 
