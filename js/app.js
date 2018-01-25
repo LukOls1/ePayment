@@ -1,4 +1,4 @@
-var app
+var app;
 $(document).ready(function() {
   app = new App();
   app.render()
@@ -12,7 +12,7 @@ function App() {
 
 App.prototype.initView = function() {
   if (this.state.isLoggedOn()){
-    this.currentView = {};
+    this.currentView = new DashboardView();
   }
   else {
     this.currentView = new LoginView();
