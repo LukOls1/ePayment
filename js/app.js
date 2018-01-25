@@ -7,6 +7,8 @@ $(document).ready(function() {
 function App() {
   this.state = new State();
   this.apiClient = new ApiClient();
+  this.dashboardView;
+  this.currentView;
   this.initView();
 }
 
@@ -20,6 +22,6 @@ App.prototype.initView = function() {
 }
 
 App.prototype.render = function() {
-  element = this.currentView.render();
-  $('#application').append(element);
+  this.currentView.render();
+
 }
