@@ -1,92 +1,103 @@
 function LoginView() {
-
-}
-
-LoginView.prototype.render = function() {
-  var login = document.createElement('div');
-  $(login).addClass('container');
-  $(login).append(this.createColumn());
-  $('#application').append(login);
-}
-LoginView.prototype.createColumn = function() {
   const login = document.createElement('div');
-  $(login).addClass('col-lg-4 col-md-6 col-sm-8');
-  $(login).append(this.createLogo());
-  $(login).append(this.createRowLoginBox());
+  $(login).addClass('container');
+  $(login).append(createColumn());
 
   return login;
 }
-LoginView.prototype.createLogo = function() {
+createColumn = function() {
+  const login = document.createElement('div');
+  $(login).addClass('col-lg-4 col-md-6 col-sm-8');
+  $(login).append(createLogo());
+  $(login).append(createRowLoginBox());
+
+  return login;
+}
+createLogo = function() {
   const login = document.createElement('div');
   $(login).addClass('logo');
   $(login).append('<img src="#">');
 
   return login;
 }
-LoginView.prototype.createRowLoginBox = function() {
+createRowLoginBox = function() {
   const login = document.createElement('div');
   $(login).addClass('col-lg-4 col-md-6 col-sm-8');
-  $(login).append(this.createSignInBox());
-  $(login).append(this.createInputLoginBox());
-  $(login).append(this.createInputPasswordBox());
-  $(login).append(this.createSubmitButtonBox());
+  $(login).append(createSignInBox());
+  $(login).append(createInputLoginBox());
+  $(login).append(createInputPasswordBox());
+  $(login).append(createSubmitButtonBox());
 
   return login;
 }
-LoginView.prototype.createSignInBox = function() {
+createSignInBox = function() {
   const login = document.createElement('div');
   $(login).addClass('col-lg-12');
-  $(login).append(this.createSignInSpan());
+  $(login).append(createSignInSpan());
 
   return login;
 }
-LoginView.prototype.createSignInSpan = function() {
+createSignInSpan = function() {
   const login = document.createElement('span');
   $(login).addClass('signtext');
   $(login).append();
 
   return login;
 }
-LoginView.prototype.createInputLoginBox = function() {
+createInputLoginBox = function() {
   const login = document.createElement('div');
   $(login).addClass('col-lg-12 col-md-12 col-sm-12');
-  $(login).append(this.createInputLogin());
+  $(login).append(createInputLogin());
 
   return login;
 }
-LoginView.prototype.createInputLogin = function() {
+createInputLogin = function() {
   const login = document.createElement('input');
   $(login).addClass('form-control');
   $(login).append();
 
   return login;
 }
-LoginView.prototype.createInputPasswordBox = function() {
+createInputPasswordBox = function() {
   const login = document.createElement('div');
   $(login).addClass('col-lg-12 col-md-12 col-sm-12');
-  $(login).append(this.createInputPassword());
+  $(login).append(createInputPassword());
 
   return login;
 }
-LoginView.prototype.createInputPassword = function() {
+createInputPassword = function() {
   const login = document.createElement('input');
   $(login).addClass('form-control');
   $(login).append();
 
   return login;
 }
-LoginView.prototype.createSubmitButtonBox = function() {
+createSubmitButtonBox = function() {
   const login = document.createElement('div');
   $(login).addClass('col-lg-12 col-md-12 col-sm-12');
-  $(login).append(this.createSubmitButton());
+  $(login).append(createSubmitButton);
 
   return login;
 }
-LoginView.prototype.createSubmitButton = function() {
-  const login = document.createElement('button');
+createSubmitButton = function() {
+  const login = document.createElement('input');
   $(login).addClass('btn submitButton');
   login.innerHTML = "Submit"
   $(login).append();
 
   return login;
+}
+
+
+LoginView.prototype.render = function() {
+  $('#application').append(LoginView);
+}
+
+
+LoginView.prototype.login = function() {
+  app.api_client.login("kubix","pass",this.loginResult)
+}
+
+LoginView.prototype.loginResult = function(loginResult) {
+
 }

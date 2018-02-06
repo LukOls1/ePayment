@@ -5,10 +5,9 @@ $(document).ready(function() {
 });
 
 function App() {
-  this.state = new State();
-  this.apiClient = new ApiClient();
-  this.dashboardView;
-  this.currentView;
+  this.state = new State();             /*przypisuje do pola state obiekt state  */
+  this.apiClient = new ApiClient();     /*przypisuje do pola state obiekt apiclient  */
+  this.currentView;                     /*przetrzymuje obiekt obecnego widoku  */
   this.initView();
 }
 
