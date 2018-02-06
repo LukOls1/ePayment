@@ -13,10 +13,10 @@ function App() {
 
 App.prototype.initView = function() {
   if (this.state.isLoggedOn()){
-    this.currentView = new DashboardView();
+    this.currentView = new DashboardView(); /*wywołanie konstruktora*/
   }
   else {
-    this.currentView = new LoginView();
+    this.currentView = new LoginView(); /*wyswietla aktualnie*/
   }
 }
 

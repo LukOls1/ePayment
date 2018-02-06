@@ -1,6 +1,6 @@
-function LoginView() {
+function LoginView() {    /* konstruktor*/
 
-}
+}  
 
 LoginView.prototype.render = function() {
   var login = document.createElement('div');
@@ -10,7 +10,7 @@ LoginView.prototype.render = function() {
 }
 LoginView.prototype.createColumn = function() {
   const login = document.createElement('div');
-  $(login).addClass('col-lg-4 col-md-6 col-sm-8');
+  $(login).addClass('col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1');
   $(login).append(this.createLogo());
   $(login).append(this.createRowLoginBox());
 
@@ -19,13 +19,13 @@ LoginView.prototype.createColumn = function() {
 LoginView.prototype.createLogo = function() {
   const login = document.createElement('div');
   $(login).addClass('logo');
-  $(login).append('<img src="#">');
+  $(login).append('<img src="https://s16.postimg.org/3wg150ysl/download.jpg">');
 
   return login;
 }
 LoginView.prototype.createRowLoginBox = function() {
   const login = document.createElement('div');
-  $(login).addClass('col-lg-4 col-md-6 col-sm-8');
+  $(login).addClass('row loginbox');
   $(login).append(this.createSignInBox());
   $(login).append(this.createInputLoginBox());
   $(login).append(this.createInputPasswordBox());
@@ -42,8 +42,8 @@ LoginView.prototype.createSignInBox = function() {
 }
 LoginView.prototype.createSignInSpan = function() {
   const login = document.createElement('span');
-  $(login).addClass('signtext');
-  $(login).append();
+  $(login).addClass('singtext');
+  $(login).text("Sing in");
 
   return login;
 }
@@ -57,7 +57,7 @@ LoginView.prototype.createInputLoginBox = function() {
 LoginView.prototype.createInputLogin = function() {
   const login = document.createElement('input');
   $(login).addClass('form-control');
-  $(login).append();
+  $(login).attr("placeholder", "login");
 
   return login;
 }
@@ -72,6 +72,7 @@ LoginView.prototype.createInputPassword = function() {
   const login = document.createElement('input');
   $(login).addClass('form-control');
   $(login).append();
+  $(login).attr("placeholder", "password");
 
   return login;
 }
