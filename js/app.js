@@ -16,7 +16,7 @@ App.prototype.initView = function() {
     this.currentView = new DashboardView(); /*wywołanie konstruktora*/
   }
   else {
-    this.currentView = new LoginView(); /*wyswietla aktualnie*/
+    this.currentView = new DashboardView(); /*wyswietla aktualnie*/
   }
 }
 
