@@ -17,7 +17,7 @@ App.prototype.initView = function() {
     this.currentView = new DashboardView();
   }
   else {
-    this.currentView = new LoginView();
+    this.currentView = new DashboardView();
   }
 }
 
