@@ -3,7 +3,7 @@ function DashboardView() {
 }
 
 DashboardView.prototype.render = function() {
-  var element = document.createElement('div');
+  var element = document.createElement("div");
   var navigation = this.createNavigationElement();
   var row = this.createRowNavbarLeftMainContent();
   var navigationLeft = this.createNavbarLeft();
@@ -14,7 +14,7 @@ DashboardView.prototype.render = function() {
   $(element).append(row);
   $('#application').append(element);
   this.mainContent.render();
-}
+};
 
 DashboardView.prototype.createNavigationElement = function() {
   var navigation = document.createElement('div');
@@ -24,7 +24,7 @@ DashboardView.prototype.createNavigationElement = function() {
   
 
   return navigation;
-}
+};
 DashboardView.prototype.createTopBar = function() {
   var navigation = document.createElement('div');
   $(navigation).addClass('navbar navbar-inverse');
@@ -42,21 +42,22 @@ DashboardView.prototype.createContainer = function() {
   
 
   return navigation;
-}
+};
+
 DashboardView.prototype.createNavbarHeader = function() {
   var navigation = document.createElement('div');
   $(navigation).addClass('navbar-header');
   $(navigation).append(this.createLogo());
 
   return navigation;
-}
+};
 DashboardView.prototype.createLogo = function() {
   var navigation = document.createElement('a');
   $(navigation).addClass('navbar-brand');
   $(navigation).text('ePayment');
 
   return navigation;
-}
+};
 DashboardView.prototype.createNavbarTopNavbarList = function() {
   var navigation = document.createElement('ul');
   $(navigation).addClass('nav navbar-nav');
@@ -65,14 +66,14 @@ DashboardView.prototype.createNavbarTopNavbarList = function() {
   $(navigation).append(this.createNavbarPeople());
 
   return navigation;
-}
+};
 DashboardView.prototype.createNavbarHome = function() {
   var navigation = document.createElement('li');
   var homeA = document.createElement('a');
   $(homeA).text('Home');
   $(navigation).append(homeA);
   return navigation;
-}
+};
 DashboardView.prototype.createNavbarMessages = function() {
   var navigation = document.createElement('li');
   var messagesA = document.createElement('a');
@@ -84,7 +85,7 @@ DashboardView.prototype.createNavbarMessages = function() {
   $(navigation).append(messagesA);
 
   return navigation;
-}
+};
 DashboardView.prototype.createNavbarPeople = function() {
   var navigation = document.createElement('li');
   var peopleA = document.createElement('a');
@@ -187,8 +188,8 @@ DashboardView.prototype.createNavbarLeftStuff = function() {
   return navigationL;
 }
 DashboardView.prototype.createMainContentElement = function() {
-  var mainContent = document.createElement('div');
-  $(mainContent).attr('id', 'mainContent');
+  var mainContent = document.createElement("div");
+  $(mainContent).attr("id", "mainContent");
   mainContent.innerText = "Main Content";
   return mainContent;
-}
+};

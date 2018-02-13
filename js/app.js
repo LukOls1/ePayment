@@ -5,19 +5,22 @@ $(document).ready(function() {
 });
 
 function App() {
-  this.state = new State();
-  this.apiClient = new ApiClient();
-  this.dashboardView;
-  this.currentView;
+  this.state = new State();             /*przypisuje do pola state obiekt state  */
+  this.apiClient = new ApiClient();     /*przypisuje do pola state obiekt apiclient  */
+  this.currentView;                     /*przetrzymuje obiekt obecnego widoku  */
   this.initView();
 }
 
 App.prototype.initView = function() {
   if (this.state.isLoggedOn()){
-    this.currentView = new DashboardView();
+    this.currentView = new DashboardView(); /*wywołanie konstruktora*/
   }
   else {
+<<<<<<< HEAD
     this.currentView = new DashboardView();
+=======
+    this.currentView = new LoginView(); /*wyswietla aktualnie*/
+>>>>>>> master
   }
 }
 
