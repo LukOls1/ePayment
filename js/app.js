@@ -16,11 +16,7 @@ App.prototype.initView = function() {
     this.currentView = new DashboardView(); /*wywołanie konstruktora*/
   }
   else {
-<<<<<<< HEAD
     this.currentView = new DashboardView();
-=======
-    this.currentView = new LoginView(); /*wyswietla aktualnie*/
->>>>>>> master
   }
 }
 

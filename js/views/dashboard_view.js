@@ -6,7 +6,7 @@ DashboardView.prototype.render = function() {
   var element = document.createElement("div");
   var navigation = this.createNavigationElement();
   var row = this.createRowNavbarLeftMainContent();
-  var navigationLeft = this.createNavbarLeft();
+  var navigationLeft = this.createContainerNavbarLeftColapseButtonLeft();
   var mainContent = this.createMainContentElement();
   $(row).append(navigationLeft);
   $(row).append(mainContent);
@@ -37,17 +37,38 @@ DashboardView.prototype.createContainer = function() {
   var navigation = document.createElement('div');
   $(navigation).addClass('container-fluid');
   $(navigation).append(this.createNavbarHeader());
-  $(navigation).append(this.createNavbarTopNavbarList());
-  $(navigation).append(this.createNavbarRight());
-  
+  $(navigation).append(this.createColapseContainer());
 
   return navigation;
 };
 
 DashboardView.prototype.createNavbarHeader = function() {
   var navigation = document.createElement('div');
+  var collapseButton = document.createElement('button');
+  var glyphiconSpan = document.createElement('span');
+  $(glyphiconSpan).addClass('glyphicon glyphicon-chevron-down');
+  $(glyphiconSpan).attr('style', 'color: white;');
+  $(glyphiconSpan).attr('id', 'changeSpan');
+  $(collapseButton).addClass('navbar-toggle turnWhite');
+  $(collapseButton).attr('data-toggle', 'collapse');
+  $(collapseButton).attr('data-target', '#collapseNavTop');
+  $(collapseButton).attr('id', 'collapseBut');
+  $(collapseButton).attr('aria-expanded', 'false');
+  $(collapseButton).append(glyphiconSpan);
   $(navigation).addClass('navbar-header');
+  $(navigation).append(collapseButton);
   $(navigation).append(this.createLogo());
+
+  $(collapseButton).click(function() {
+    if (glyphiconSpan.classList.contains('glyphicon-chevron-down')) {
+      glyphiconSpan.classList.remove('glyphicon-chevron-down');
+      glyphiconSpan.classList.add('glyphicon-chevron-up'); 
+    }
+    else if (glyphiconSpan.classList.contains('glyphicon-chevron-up'))  {
+      glyphiconSpan.classList.remove('glyphicon-chevron-up');
+      glyphiconSpan.classList.add('glyphicon-chevron-down');
+    }
+  })
 
   return navigation;
 };
@@ -55,6 +76,15 @@ DashboardView.prototype.createLogo = function() {
   var navigation = document.createElement('a');
   $(navigation).addClass('navbar-brand');
   $(navigation).text('ePayment');
+
+  return navigation;
+};
+DashboardView.prototype.createColapseContainer = function() {
+  var navigation = document.createElement('div');
+  $(navigation).addClass('collapse navbar-collapse');
+  $(navigation).attr('id', 'collapseNavTop');
+  $(navigation).append(this.createNavbarTopNavbarList());
+  $(navigation).append(this.createNavbarRight());
 
   return navigation;
 };
@@ -137,9 +167,17 @@ DashboardView.prototype.createRowNavbarLeftMainContent = function() {
   
   return navigation;
 }
+DashboardView.prototype.createContainerNavbarLeftColapseButtonLeft = function() {
+  var navigationL = document.createElement('div');
+  $(navigationL).append(this.createNavbarLeft());
+  $(navigationL).append(this.createColapseButtonLeft());
+  
+  return navigationL;
+}
 DashboardView.prototype.createNavbarLeft = function() {
   var navigationL = document.createElement('ul');
-  $(navigationL).addClass('col-lg-3 col-md-3 col-sm-3 nav-sidebar');
+  $(navigationL).attr('id, navLeft');
+  $(navigationL).addClass('col-lg-3 col-md-3 col-sm-3 collapse navbar-collapse nav-sidebar');
   $(navigationL).append(this.createNavbarLeftComments());
   $(navigationL).append(this.createNavbarLeftPayments());
   $(navigationL).append(this.createNavbarLeftCalendar());
@@ -187,9 +225,47 @@ DashboardView.prototype.createNavbarLeftStuff = function() {
   
   return navigationL;
 }
+DashboardView.prototype.createColapseButtonLeft = function() {
+  var navigationL = document.createElement('button');
+  var buttonSpan = document.createElement('span');
+  $(buttonSpan).addClass('glyphicon glyphicon glyphicon-chevron-down');
+  $(navigationL).addClass('sidebar-toggle col-xs-12 hidden-lg hidden-md hidden-sm');
+  $(navigationL).attr('id', 'sideCollapseButton');
+  $(navigationL).attr('data-toggle', 'collapse');
+  $(navigationL).attr('data-target', '.nav-sidebar');
+  $(navigationL).append(buttonSpan);
+  $(navigationL).click(function(){
+     $('.nav-sidebar').removeClass('hidden-xs'); 
+     if (buttonSpan.classList.contains('glyphicon-chevron-down')) {
+      buttonSpan.classList.remove('glyphicon-chevron-down');
+      buttonSpan.classList.add('glyphicon-chevron-up'); 
+    }
+    else if (buttonSpan.classList.contains('glyphicon-chevron-up'))  {
+      buttonSpan.classList.remove('glyphicon-chevron-up');
+      buttonSpan.classList.add('glyphicon-chevron-down');
+    }           
+});
+  
+  return navigationL;
+}
+
 DashboardView.prototype.createMainContentElement = function() {
   var mainContent = document.createElement("div");
   $(mainContent).attr("id", "mainContent");
   mainContent.innerText = "Main Content";
   return mainContent;
 };
+/*function collapsecontent(){
+    var atribute = document.getElementById('collapseBut').getAttribute('aria-expanded');
+    var span = document.getElementById('changeSpan');
+    if (atribute === false) {
+      span.classList.remove('glyphicon-chevron-down');
+      span.classList.add('glyphicon-chevron-up'); 
+      console.log(atribute)
+    }
+    else if (atribute === true)  {
+      span.classList.remove('glyphicon-chevron-up');
+      span.classList.add('glyphicon-chevron-down');
+      console.log(atribute) 
+    }
+  }*/
