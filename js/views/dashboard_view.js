@@ -6,9 +6,9 @@ DashboardView.prototype.render = function() {
   var element = document.createElement('div');
   var navigation = this.createNavigationElement();
   var row = this.createRowNavbarLeftMainContent();
-  var navigationLeft = this.createContainerNavbarLeftColapseButtonLeft();
+  var navigationLeft = this.createContentNavigation();
   var mainContent = this.createMainContentElement();
-  $(row).append(navigationLeft);
+  //$(row).append(navigationLeft);
   $(row).append(mainContent);
   $(element).append(navigation);
   $(element).append(row);
@@ -26,15 +26,15 @@ DashboardView.prototype.createNavigationElement = function() {
 };
 DashboardView.prototype.createTopBar = function() {
   var navigation = document.createElement('div');
-  $(navigation).addClass('navbar navbar-inverse');
-  $(navigation).append(this.createContainer());
+  $(navigation).addClass('navbar'); //not navbar-inverse
+  $(navigation).append(this.createTopNav());
   $(navigation).append(this.createColapseButtonLeft()); //inserted here
   return navigation;
 };
 
-DashboardView.prototype.createContainer = function() {
+DashboardView.prototype.createTopNav = function() {
   var navigation = document.createElement('div');
-  $(navigation).addClass('container-fluid');
+  $(navigation).addClass('navbar-inverse container-fluid');
   $(navigation).append(this.createNavbarHeader());
   $(navigation).append(this.createColapseContainer());
 
@@ -165,8 +165,9 @@ DashboardView.prototype.createRowNavbarLeftMainContent = function() {
 
   return navigation;
 };
-DashboardView.prototype.createContainerNavbarLeftColapseButtonLeft = function() {
+DashboardView.prototype.createContentNavigation = function() {
   var navigationL = document.createElement('div');
+  $(navigationL).attr('id', 'contentNavigation');
   $(navigationL).append(this.createNavbarLeft());
   //$(navigationL).append(this.createColapseButtonLeft());
 
@@ -226,16 +227,20 @@ DashboardView.prototype.createNavbarLeftStuff = function() {
   return navigationL;
 };
 DashboardView.prototype.createColapseButtonLeft = function() {
-  var navigationL = document.createElement('button');
+  var navigationL = document.createElement('div'); //not button
   var buttonSpan = document.createElement('span');
+
+  $(navigationL).addClass('navbar-default navbar'); //button as another navbar
+
   $(buttonSpan).addClass('glyphicon glyphicon glyphicon-chevron-down');
   $(navigationL).addClass(
-    'sidebar-toggle col-xs-12 hidden-lg hidden-md hidden-sm'
+    'sidebar-toggle col-xs-12 hidden-lg hidden-md hidden-sm text-center '
   );
   $(navigationL).attr('id', 'sideCollapseButton');
   $(navigationL).attr('data-toggle', 'collapse');
   $(navigationL).attr('data-target', '.nav-sidebar');
   $(navigationL).append(buttonSpan);
+  $(navigationL).append(this.createContentNavigation());
   $(navigationL).click(function() {
     $('.nav-sidebar').removeClass('hidden-xs');
     if (buttonSpan.classList.contains('glyphicon-chevron-down')) {
