@@ -3,7 +3,7 @@ function DashboardView() {
 }
 
 DashboardView.prototype.render = function() {
-  var element = document.createElement("div");
+  var element = document.createElement('div');
   var navigation = this.createNavigationElement();
   var row = this.createRowNavbarLeftMainContent();
   var navigationLeft = this.createContainerNavbarLeftColapseButtonLeft();
@@ -21,7 +21,6 @@ DashboardView.prototype.createNavigationElement = function() {
   $(navigation).attr('id', 'navigation');
   $(navigation).append(this.createTopBar());
   $(navigation).append(this.createRowNavbarLeftMainContent());
-  
 
   return navigation;
 };
@@ -29,9 +28,9 @@ DashboardView.prototype.createTopBar = function() {
   var navigation = document.createElement('div');
   $(navigation).addClass('navbar navbar-inverse');
   $(navigation).append(this.createContainer());
-
+  $(navigation).append(this.createColapseButtonLeft()); //inserted here
   return navigation;
-}
+};
 
 DashboardView.prototype.createContainer = function() {
   var navigation = document.createElement('div');
@@ -62,13 +61,12 @@ DashboardView.prototype.createNavbarHeader = function() {
   $(collapseButton).click(function() {
     if (glyphiconSpan.classList.contains('glyphicon-chevron-down')) {
       glyphiconSpan.classList.remove('glyphicon-chevron-down');
-      glyphiconSpan.classList.add('glyphicon-chevron-up'); 
-    }
-    else if (glyphiconSpan.classList.contains('glyphicon-chevron-up'))  {
+      glyphiconSpan.classList.add('glyphicon-chevron-up');
+    } else if (glyphiconSpan.classList.contains('glyphicon-chevron-up')) {
       glyphiconSpan.classList.remove('glyphicon-chevron-up');
       glyphiconSpan.classList.add('glyphicon-chevron-down');
     }
-  })
+  });
 
   return navigation;
 };
@@ -107,7 +105,7 @@ DashboardView.prototype.createNavbarHome = function() {
 DashboardView.prototype.createNavbarMessages = function() {
   var navigation = document.createElement('li');
   var messagesA = document.createElement('a');
-  var badgeSpan = document.createElement ('span');
+  var badgeSpan = document.createElement('span');
   $(badgeSpan).addClass('label label-danger');
   $(badgeSpan).text('13');
   $(messagesA).text('Messages ');
@@ -119,7 +117,7 @@ DashboardView.prototype.createNavbarMessages = function() {
 DashboardView.prototype.createNavbarPeople = function() {
   var navigation = document.createElement('li');
   var peopleA = document.createElement('a');
-  var badgeSpan = document.createElement ('span');
+  var badgeSpan = document.createElement('span');
   $(badgeSpan).addClass('label label-danger');
   $(badgeSpan).text('26');
   $(peopleA).text('People ');
@@ -127,15 +125,15 @@ DashboardView.prototype.createNavbarPeople = function() {
   $(navigation).append(peopleA);
 
   return navigation;
-}
+};
 DashboardView.prototype.createNavbarRight = function() {
   var navigation = document.createElement('ul');
   $(navigation).addClass('nav navbar-nav navbar-right');
   $(navigation).append(this.createNavbarProfile());
   $(navigation).append(this.createNavbarLogOut());
-  
+
   return navigation;
-}
+};
 DashboardView.prototype.createNavbarProfile = function() {
   var navigation = document.createElement('li');
   var profileA = document.createElement('a');
@@ -146,7 +144,7 @@ DashboardView.prototype.createNavbarProfile = function() {
   $(navigation).append(profileA);
 
   return navigation;
-}
+};
 DashboardView.prototype.createNavbarLogOut = function() {
   var navigation = document.createElement('li');
   var logOutA = document.createElement('a');
@@ -155,36 +153,38 @@ DashboardView.prototype.createNavbarLogOut = function() {
   $(logOutA).append(logOutSpan);
   $(logOutA).append(' Log out');
   $(navigation).append(logOutA);
-  
+
   return navigation;
-}
+};
 DashboardView.prototype.createRowNavbarLeftMainContent = function() {
   var navigation = document.createElement('div');
   $(navigation).addClass('row');
   var row = document.createElement('div');
   $(navigation).addClass('container-fluid');
   $(navigation).append(row);
-  
+
   return navigation;
-}
+};
 DashboardView.prototype.createContainerNavbarLeftColapseButtonLeft = function() {
   var navigationL = document.createElement('div');
   $(navigationL).append(this.createNavbarLeft());
-  $(navigationL).append(this.createColapseButtonLeft());
-  
+  //$(navigationL).append(this.createColapseButtonLeft());
+
   return navigationL;
-}
+};
 DashboardView.prototype.createNavbarLeft = function() {
   var navigationL = document.createElement('ul');
   $(navigationL).attr('id, navLeft');
-  $(navigationL).addClass('col-lg-3 col-md-3 col-sm-3 collapse navbar-collapse nav-sidebar');
+  $(navigationL).addClass(
+    'col-lg-3 col-md-3 col-sm-3 collapse navbar-collapse nav-sidebar'
+  );
   $(navigationL).append(this.createNavbarLeftComments());
   $(navigationL).append(this.createNavbarLeftPayments());
   $(navigationL).append(this.createNavbarLeftCalendar());
   $(navigationL).append(this.createNavbarLeftStuff());
-  
+
   return navigationL;
-}
+};
 DashboardView.prototype.createNavbarLeftComments = function() {
   var navigationL = document.createElement('a');
   var commentsSpan = document.createElement('span');
@@ -192,9 +192,9 @@ DashboardView.prototype.createNavbarLeftComments = function() {
   $(navigationL).addClass('list-group-item');
   $(navigationL).append(commentsSpan);
   $(navigationL).append(' Comments');
-  
+
   return navigationL;
-}
+};
 DashboardView.prototype.createNavbarLeftPayments = function() {
   var navigationL = document.createElement('a');
   var paymentSpan = document.createElement('span');
@@ -202,9 +202,9 @@ DashboardView.prototype.createNavbarLeftPayments = function() {
   $(navigationL).addClass('list-group-item');
   $(navigationL).append(paymentSpan);
   $(navigationL).append(' Payments');
-  
+
   return navigationL;
-}
+};
 DashboardView.prototype.createNavbarLeftCalendar = function() {
   var navigationL = document.createElement('a');
   var calendarSpan = document.createElement('span');
@@ -212,9 +212,9 @@ DashboardView.prototype.createNavbarLeftCalendar = function() {
   $(navigationL).addClass('list-group-item');
   $(navigationL).append(calendarSpan);
   $(navigationL).append(' Calendar');
-  
+
   return navigationL;
-}
+};
 DashboardView.prototype.createNavbarLeftStuff = function() {
   var navigationL = document.createElement('a');
   var stuffSpan = document.createElement('span');
@@ -222,37 +222,38 @@ DashboardView.prototype.createNavbarLeftStuff = function() {
   $(navigationL).addClass('list-group-item');
   $(navigationL).append(stuffSpan);
   $(navigationL).append(' Some stuff');
-  
+
   return navigationL;
-}
+};
 DashboardView.prototype.createColapseButtonLeft = function() {
   var navigationL = document.createElement('button');
   var buttonSpan = document.createElement('span');
   $(buttonSpan).addClass('glyphicon glyphicon glyphicon-chevron-down');
-  $(navigationL).addClass('sidebar-toggle col-xs-12 hidden-lg hidden-md hidden-sm');
+  $(navigationL).addClass(
+    'sidebar-toggle col-xs-12 hidden-lg hidden-md hidden-sm'
+  );
   $(navigationL).attr('id', 'sideCollapseButton');
   $(navigationL).attr('data-toggle', 'collapse');
   $(navigationL).attr('data-target', '.nav-sidebar');
   $(navigationL).append(buttonSpan);
-  $(navigationL).click(function(){
-     $('.nav-sidebar').removeClass('hidden-xs'); 
-     if (buttonSpan.classList.contains('glyphicon-chevron-down')) {
+  $(navigationL).click(function() {
+    $('.nav-sidebar').removeClass('hidden-xs');
+    if (buttonSpan.classList.contains('glyphicon-chevron-down')) {
       buttonSpan.classList.remove('glyphicon-chevron-down');
-      buttonSpan.classList.add('glyphicon-chevron-up'); 
-    }
-    else if (buttonSpan.classList.contains('glyphicon-chevron-up'))  {
+      buttonSpan.classList.add('glyphicon-chevron-up');
+    } else if (buttonSpan.classList.contains('glyphicon-chevron-up')) {
       buttonSpan.classList.remove('glyphicon-chevron-up');
       buttonSpan.classList.add('glyphicon-chevron-down');
-    }           
-});
-  
+    }
+  });
+
   return navigationL;
-}
+};
 
 DashboardView.prototype.createMainContentElement = function() {
-  var mainContent = document.createElement("div");
-  $(mainContent).attr("id", "mainContent");
-  mainContent.innerText = "Main Content";
+  var mainContent = document.createElement('div');
+  $(mainContent).attr('id', 'mainContent');
+  mainContent.innerText = 'Main Content';
   return mainContent;
 };
 /*function collapsecontent(){
@@ -260,12 +261,12 @@ DashboardView.prototype.createMainContentElement = function() {
     var span = document.getElementById('changeSpan');
     if (atribute === false) {
       span.classList.remove('glyphicon-chevron-down');
-      span.classList.add('glyphicon-chevron-up'); 
+      span.classList.add('glyphicon-chevron-up');
       console.log(atribute)
     }
     else if (atribute === true)  {
       span.classList.remove('glyphicon-chevron-up');
       span.classList.add('glyphicon-chevron-down');
-      console.log(atribute) 
+      console.log(atribute)
     }
   }*/
