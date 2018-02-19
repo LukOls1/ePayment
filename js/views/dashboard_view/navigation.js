@@ -4,12 +4,13 @@ function Navigation(parentId) {
   this.contentNavigationId = 'contentNavigation';
 
   this.topNavigation = new TopNavigation(this.topNavigationId);
-  //this.contentNavigation... analogicznie
+  this.contentNavigation = new ContentNavigation(this.contentNavigationId);
 }
 
 Navigation.prototype.render = function() {
   this.createNavigationContainers();
   this.topNavigation.render();
+  this.contentNavigation.render();
 };
 
 Navigation.prototype.createNavigationContainers = function() {

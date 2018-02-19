@@ -11,8 +11,21 @@ TopNavigation.prototype.createTopNavigation = function() {
   var topNavigation = document.createElement('div');
   $(topNavigation).addClass('navbar');
   $(topNavigation).append(this.createTopNav());
+  $(topNavigation).append(this.createToggleButton());
   //$(navigation).append(this.createColapseButtonLeft());
   return topNavigation;
+};
+
+TopNavigation.prototype.createToggleButton = function() {
+  var toggleBtn = document.createElement('div');
+  $(toggleBtn).addClass('navbar-default visible-xs btn');
+  $(toggleBtn).append('Menu');
+  $(toggleBtn).click(this.toggleNav);
+  return toggleBtn;
+};
+
+TopNavigation.prototype.toggleNav = function() {
+  $('#contentNav-wrapper').toggleClass('hidden-xs');
 };
 
 TopNavigation.prototype.createTopNav = function() {
