@@ -32,26 +32,39 @@ ContentNavigation.prototype.createNavSpy = function() {
 
 ContentNavigation.prototype.createSidebarNav = function() {
   var sidebarNav = document.createElement('ul');
-  $(sidebarNav).addClass('sidebar-nav nav');
+  $(sidebarNav).addClass('sidebar-nav col-xs-12');
   this.populateNavigation(sidebarNav);
   return sidebarNav;
 };
 
+var arrayOfContent = [
+  {name: 'Comments', glyphicon: 'glyphicon glyphicon-comment', id: ''},
+  {name: 'Payments', glyphicon: 'glyphicon glyphicon-stats', id: ''},
+  {name: 'Calendar', glyphicon: 'glyphicon glyphicon-calendar', id: ''}
+]
+
 ContentNavigation.prototype.populateNavigation = function(navigation) {
-  for (i = 0; i < 6; i++) {
-    $(navigation).append(this.createNavElement('Title ' + i));
+  for (i = 0; i < arrayOfContent.length; i++) {
+    $(navigation).append(this.createNavElement(arrayOfContent [i,i,i].name,arrayOfContent [i,i,i].glyphicon,arrayOfContent [i,i,i].id));
   }
 };
 
-ContentNavigation.prototype.createNavElement = function(title) {
+ContentNavigation.prototype.createNavElement = function(name,glyphicon,id) {
+  var name = name;
+  var glyphicon = glyphicon;
+  var id = id;
   var navElementLi = document.createElement('li');
+  $(navElementLi).addClass('list-group-item');
+  if (id !== ''){
+    $(navElementLi).attr('id', id);
+  }
   var navElementA = document.createElement('a');
   var navElementSpan = document.createElement('span');
-  $(navElementSpan).addClass('fa fa-anchor solo');
-  $(navElementSpan).append(title);
-
-  $(navElementA).append(navElementSpan);
+  $(navElementSpan).addClass(glyphicon);
+  
   $(navElementLi).append(navElementA);
+  $(navElementA).append(navElementSpan);
+  $(navElementA).append(' ' + name);
 
   return navElementLi;
 };
