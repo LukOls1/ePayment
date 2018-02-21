@@ -27,7 +27,7 @@ PaymentDashboard.prototype.createPaymentsDashboard = function() {
 
 PaymentDashboard.prototype.createDashboardElement = function() {
   var dbElement = document.createElement('div');
-  $(dbElement).addClass('well col-sm-3');
+  $(dbElement).addClass('well col-sm-3 hidden-xs');
   $(dbElement).append(
     '<img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/10_pie_chart.svg" alt="Lights" style="width:90%">'
   );
