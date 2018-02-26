@@ -1,3 +1,11 @@
 li a {
   display: block;
 }
+.deleteMargin {
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  .deleteMargin {
+    padding: 0;
+  }
+}
