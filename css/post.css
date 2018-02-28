@@ -1,20 +1,25 @@
 .posts-list {
-    height: 60vh;
+    height: 70vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .post-container {
-  height: 100vh
+    height: 100vh
 }
 .postInputDiv {
-    margin-top: 5px;
+    margin-top: 5px;  
     position: relative;
 }
 .postInput {
     font-size: 23px;
     padding: 0;
 }
+textarea {
+    resize: none;
+    border-radius: 10px;
+}
 #postAddButton {
-    height: 44px;
+    height: 64px;
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -26,6 +31,7 @@
     -moz-box-shadow: 0px 2px 19px 5px rgba(0,0,0,0.36);
     box-shadow: 0px 2px 19px 5px rgba(0,0,0,0.36);
     margin: 1vw;
+    margin-bottom: 4px;
 }
 .avatar {
     width: 80%; 
@@ -43,12 +49,26 @@
     padding: 10px 0;
     text-align: center;
 }
+.postComment {
+    border-radius: 15px;
+    background-color: white;
+    -webkit-box-shadow: 0px 2px 19px 1px rgba(0,0,0,0.36);
+    -moz-box-shadow: 0px 2px 19px 1px rgba(0,0,0,0.36);
+    box-shadow: 0px 2px 19px 1px rgba(0,0,0,0.36);
+    margin-bottom: 4px;
+}
+#addCommentBut {
+    width: 46px;
+    height: 46px;
+    margin-left: 1vw;
+    border-radius: 10px;
+}
 @media only screen and (max-width: 768px) {
     .navbar {
         margin: 0;
     }
     #postAddButton {
-        position: static;
+        height: 42px;
     }
     .postInput {
         font-size: 15px;
