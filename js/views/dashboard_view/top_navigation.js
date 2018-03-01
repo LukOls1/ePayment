@@ -130,7 +130,8 @@ TopNavigation.prototype.createNavbarLogOut = function() {
   var logOutSpan = document.createElement('span');
   $(logOutSpan).addClass('glyphicon glyphicon-log-out');
   $(logOutA).append(logOutSpan);
-  $(logOutA).append(' Log out');
+  $(logOutA).append('Log out');
+  $(navigation).on('click', app.loginProvider.logout);
   $(navigation).append(logOutA);
 
   return navigation;

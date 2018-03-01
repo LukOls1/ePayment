@@ -8,8 +8,7 @@ function State() {
 State.prototype.isLoggedOn = function() {
   if (this.token === null) {
     return false;
-  }
-  else {
+  } else {
     return true;
   }
-}
+};
