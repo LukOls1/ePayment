@@ -4,13 +4,13 @@ function LoginView() {    /* konstruktor*/
 
 LoginView.prototype.render = function() {
   var login = document.createElement('div');
-  $(login).addClass('container');
+  $(login).addClass('container-fluid');
   $(login).append(this.createColumn());
   $('#application').append(login);
 }
 LoginView.prototype.createColumn = function() {
   const login = document.createElement('div');
-  $(login).addClass('col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1');
+  $(login).addClass('col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-12 col-xs-12');
   $(login).append(this.createLogo());
   $(login).append(this.createRowLoginBox());
 
